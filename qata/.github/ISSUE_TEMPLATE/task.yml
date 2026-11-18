@@ -1,0 +1,31 @@
+name: やること
+description: やると決めて、すぐ手をつけられるもの
+body:
+  - type: markdown
+    attributes:
+      value: タイトルだけで何をするかが分かるように書く。本文は、経緯を知らない人が読んでも分かるように書く。
+  - type: textarea
+    id: why
+    attributes:
+      label: 背景
+      description: なぜやるのか。何が困っていて、やると何がよくなるか。2〜3 行
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: やること
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 終わりの条件
+      description: 何が確かめられたら終わりか。テストや目で見て分かる形で書く
+    validations:
+      required: true
+  - type: textarea
+    id: related
+    attributes:
+      label: 関連
+      description: 元になった決めたこと・改善案・issue へのリンク

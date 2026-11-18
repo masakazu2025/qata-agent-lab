@@ -1,0 +1,25 @@
+# 関門（README の「関門」）を回す。通らないと main にマージできない（ブランチの保護）。
+# 契約は、このリポジトリの qata-contracts/ にある読む版の写しを読む。親のリポジトリは取ってこない。
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      # 写しを手で直していないか（読む版のタグから写し直して、差分がないこと）
+      - run: uv run python scripts/sync_contracts.py --check
+      # 読む版が親の最新より古ければ警告だけを出す。関門は落とさない
+      - run: uv run python scripts/sync_contracts.py --warn-if-old
+      - run: uv run pytest
+      - run: uv run ruff check
+      - run: uv run ruff format --check
+      - run: uv run pyright
