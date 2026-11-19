@@ -1,6 +1,6 @@
 # qata-web
 
-qata の web です。テストケースの一覧・人の確認（承認）・実行と、実行の結果とスクショの表示を受け持ちます。server の REST API だけを使います。
+qata の web です。テストケースの一覧・承認・実行と、実行の結果とスクリーンショットの表示を受け持ちます。server の REST API だけを使います。
 
 **契約と全体の要件は `../qata/` を見る。** 契約の正は `../qata/contracts/`。全体に関わる issue は親のリポジトリ（qata）の issue に、idea は `../qata/docs/ideas.md` に上げる。
 

@@ -6,19 +6,19 @@ Windows のデスクトップアプリ（最終的には、店舗などで使う
 
 ## 目的
 
-1. **ツール本体**：日本語の手順と確認事項からテストケースを作り、登録・実行し、結果を閲覧できるようにする。
+1. **ツール本体**：日本語の手順と期待結果からテストケースを作り、登録・実行し、結果を閲覧できるようにする。
 2. **開発の仕組み**：AI に要件 → 設計 → 実装 → テストを回させる仕組み（rules・skills・関門）を作る。ツール本体と同じくらい、これも成果物です。
 
 ## いま
 
-PoC（**Windows の電卓に対して、日本語の手順から、操作の自動実行、結果のスクショ表示まで、一本通るデモ**）が終わりました（2026-11-08）。いまは「管理の拡張」をやっています。中期目標（やることの大きなまとまり）は [docs/roadmap.md](docs/roadmap.md)、いまのスコープは [docs/scope.md](docs/scope.md) にあります。
+PoC（**Windows の電卓に対して、日本語の手順から、操作の自動実行、結果のスクリーンショット表示まで、一本通るデモ**）が終わりました（2026-11-08）。いまは「管理の拡張」をやっています。中期目標（やることの大きなまとまり）は [docs/roadmap.md](docs/roadmap.md)、いまのスコープは [docs/scope.md](docs/scope.md) にあります。
 
 ## リポジトリ
 
 | リポジトリ | 役割 | 技術 |
 | --- | --- | --- |
 | `qata`（ここ） | 目的・中期目標・スコープ・契約・共通の作り方（rules / skills）・ideas | Markdown、JSON Schema |
-| `qata-runner` | Windows 上で操作を実行し、結果とスクショを返す | Python、pywinauto、FastAPI |
+| `qata-runner` | Windows 上で操作を実行し、結果とスクリーンショットを返す | Python、pywinauto、FastAPI |
 | `qata-server` | 部品の辞書の提供、テストケースの検証・登録、実行の指揮、結果の保存。入口は REST と MCP | Python、FastAPI、pydantic、MCP の Python SDK、SQLite・SQLAlchemy 2・Alembic |
 | `qata-web` | テストケースの確認・管理、実行、結果の閲覧 | TypeScript、React（Vite） |
 
@@ -37,5 +37,5 @@ PoC（**Windows の電卓に対して、日本語の手順から、操作の自�
 - [docs/process.md](docs/process.md)：開発の進め方
 - [docs/decisions.md](docs/decisions.md)：決めたことと、その理由
 - [docs/ideas.md](docs/ideas.md)：まだやると決めていない改善案（やると決めたら issue にする）
-- [docs/retro.md](docs/retro.md)：周回ごとの振り返り
+- [docs/retro.md](docs/retro.md)：イテレーションごとの振り返り
 - [docs/knowledge/](docs/knowledge/)：現場の知識（一般化したもの）

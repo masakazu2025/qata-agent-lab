@@ -5,7 +5,7 @@
 | リポジトリ | 役割 | 技術 |
 | --- | --- | --- |
 | `qata`（親） | 目的・中期目標・スコープ・契約・共通の作り方（rules / skills）・ideas | Markdown、JSON Schema |
-| `qata-runner` | Windows 上で操作を実行し、結果とスクショを返す | Python、pywinauto、FastAPI、pyright |
+| `qata-runner` | Windows 上で操作を実行し、結果とスクリーンショットを返す | Python、pywinauto、FastAPI、pyright |
 | `qata-server` | 部品の辞書の提供、テストケースの検証・登録、実行の指揮、結果の保存。入口は REST と MCP | Python、FastAPI、pydantic、pydantic-settings、MCP の Python SDK（HTTP）、SQLite・SQLAlchemy 2・Alembic、pyright |
 | `qata-web` | テストケースの確認・管理、実行、結果の閲覧 | TypeScript、React（Vite）、React Router、TanStack Query、Tailwind CSS・shadcn/ui、ESLint |
 
@@ -24,7 +24,7 @@ flowchart LR
     IF[interface 層：REST・MCP] --> APP[application 層]
   end
   S -- 命令 --> R[qata-runner]
-  R -- 結果・スクショ --> S
+  R -- 結果・スクリーンショット --> S
   R -- 操作 --> APP2[電卓]
 ```
 
@@ -45,7 +45,7 @@ flowchart LR
 | web の見た目 | Tailwind CSS と shadcn/ui | web |
 | web の画面と読み込み | React Router（画面を URL で持つ）、TanStack Query（server からの読み込みと読み直し） | web |
 | web の入力フォーム | 作る画面ができたときに、React Hook Form と契約の JSON Schema での検証にする | web |
-| テスト | pytest（Python）、vitest と Testing Library（web）、Playwright（端から端まで） | すべて |
+| テスト | pytest（Python）、vitest と Testing Library（web）、Playwright（E2E テスト） | すべて |
 | 入れないもの | 認証、Redis などの外の待ち行列 | — |
 
 ## 子の README に書くこと
@@ -69,7 +69,7 @@ flowchart LR
 2. Claude が MCP で部品の辞書を読み、テストケースを作って登録する
 3. 実行する
 4. 電卓が動く
-5. web で結果とスクショを見る
+5. web で結果とスクリーンショットを見る
 
 ## ローカルのフォルダ
 
@@ -92,9 +92,9 @@ flowchart LR
 
 契約の一覧（PoC の間は仮に確定）：
 
-- テストケースの形式（手順・確認事項）
+- テストケースの形式（手順・期待結果）
 - 画面の部品の辞書の形式
-- runner への命令と、runner からの結果（スクショを含む）
+- runner への命令と、runner からの結果（スクリーンショットを含む）
 - server の API（親の `openapi.yaml` が正。web はここから型を生成し、server は FastAPI が出す OpenAPI がこれと合うことをテストで確かめる）
 - server の MCP の道具（名前・入力・出力）
 
