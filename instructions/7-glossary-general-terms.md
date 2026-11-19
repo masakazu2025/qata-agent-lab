@@ -169,4 +169,4 @@ qata の用語集 `docs/knowledge/glossary.md` には、qata の中でしか通�
 ## 元の作業
 
 - issue：[masakazu2025/qata-agent-lab#7](https://github.com/masakazu2025/qata-agent-lab/issues/7)
-- pull request：（まだない）
+- pull request：[masakazu2025/qata-agent-lab#11](https://github.com/masakazu2025/qata-agent-lab/pull/11)
