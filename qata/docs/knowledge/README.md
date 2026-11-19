@@ -4,7 +4,8 @@
 
 | ファイル | 中身 | 増やすとき |
 | --- | --- | --- |
-| [glossary.md](glossary.md) | 用語集。qata で使い分けている言葉の定義 | 新しい言葉を使い始めたとき、言葉の意味を決め直したとき |
+| [glossary/domain.md](glossary/domain.md) | 用語集（qata 固有の言葉）。qata の外では同じ意味で通じない言葉の定義 | qata 固有の言葉を使い始めたとき、言葉の意味を決め直したとき |
+| [glossary/general.md](glossary/general.md) | 用語集（一般の言葉の推奨語）。言い方がいくつもある一般の言葉のうち、使う言葉 | 言葉の揺れを見つけたとき |
 | [app-traits.md](app-traits.md) | 業務アプリの性質。対象のアプリが持ちうる、テストに効く性質 | 人から対象の前提を聞いたとき |
 | [automation-pitfalls.md](automation-pitfalls.md) | 自動化で困ること。性質から起きる問題と、取りうる手 | 作っていて、困ったことが出たとき |
 | [use-cases.md](use-cases.md) | 想定するユースケース。qata がどう使われるか | 人が決める（D29）。AI は案を出す |

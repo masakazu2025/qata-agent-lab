@@ -65,7 +65,7 @@ uv run qata-server
 | `QATA_HOST` | server が待ち受けるアドレス | `127.0.0.1` |
 | `QATA_PORT` | server が待ち受けるポート | `8000` |
 | `QATA_RUNNER_URL` | runner の場所 | `http://127.0.0.1:8001` |
-| `QATA_DATA_DIR` | 保存先のフォルダ（テストケース・実行の結果・スクショ） | `./data`（立ち上げたフォルダから見て） |
+| `QATA_DATA_DIR` | 保存先のフォルダ（テストケース・実行の結果・スクリーンショット） | `./data`（立ち上げたフォルダから見て） |
 
 - 空の環境変数は、置いていないものとして扱います（既定値になります）。
 - `QATA_PORT` が数でないときは、立ち上げる前に誤りで止まります。
@@ -76,7 +76,7 @@ uv run qata-server
 $env:QATA_PORT = '9000'; $env:QATA_DATA_DIR = 'C:\qata-data'; uv run qata-server
 ```
 
-ほかに渡しているところ：web の端から端までのテスト（qata-web の `playwright.config.ts`）、CI（`.github/workflows/ci.yml`）。
+ほかに渡しているところ：web の E2E テスト（qata-web の `playwright.config.ts`）、CI（`.github/workflows/ci.yml`）。
 
 環境変数を読むのは `src/qata_server/settings.py`（pydantic-settings）だけです。項目を足すときは、ここに足します。
 

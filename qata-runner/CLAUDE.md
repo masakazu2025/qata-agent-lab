@@ -1,6 +1,6 @@
 # qata-runner
 
-qata の runner です。Windows 上で操作（キー・タップ・文字の読み取り）を実行し、結果とスクショを返します。入口は REST（`POST /runs`）。部品の辞書もテストケースも知りません。
+qata の runner です。Windows 上で操作（キー・タップ・文字の読み取り）を実行し、結果とスクリーンショットを返します。入口は REST（`POST /runs`）。部品の辞書もテストケースも知りません。
 
 **契約と全体の要件は `../qata/` を見る。** 契約の正は `../qata/contracts/`。runner が読むのは、その版を写した `qata-contracts/`（読む版は `qata-contracts/VERSION`、README の「読む契約の版」）。全体に関わる issue は親のリポジトリ（qata）の issue に、idea は `../qata/docs/ideas.md` に上げる。
 
